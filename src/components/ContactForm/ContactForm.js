@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import css from './ContactForm.module.css';
-import { addContact } from 'redux/operations';
+import { addContact } from 'redux/contacts/operations';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { selectContacts } from 'redux/selectors';
@@ -9,6 +9,24 @@ export const ContactForm = () => {
   const contacts = useSelector(selectContacts);
 
   const dispatch = useDispatch();
+
+  function handleFormatPhoneNumber(phoneNumber) {
+    if (typeof phoneNumber !== 'string') {
+      return phoneNumber;
+    }
+
+    var formattedNumber = '';
+
+    for (var i = 0; i < phoneNumber.length; i++) {
+      if (i !== 0 && i % 3 === 0) {
+        formattedNumber += '-';
+      }
+
+      formattedNumber += phoneNumber[i];
+    }
+
+    return formattedNumber;
+  }
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -25,7 +43,7 @@ export const ContactForm = () => {
     }
     const user = {
       name,
-      phone,
+      phone: handleFormatPhoneNumber(phone),
     };
     dispatch(addContact(user));
     form.reset();
@@ -51,8 +69,9 @@ export const ContactForm = () => {
             className={clsx(css.inputContact)}
             type="tel"
             name="number"
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+            pattern="\d{1,4}?\d{1,3}?\d{1,4}\d{1,4}\d{1,9}"
+            title="Phone number must be digits"
+            maxLength={11}
             required
           />
         </label>

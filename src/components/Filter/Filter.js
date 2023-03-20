@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import css from './Filter.module.css';
 import { useDispatch } from 'react-redux';
-import { setStatusFilter } from 'redux/filterSlice';
+import { setStatusFilter } from 'redux/filter/filterSlice';
 export const Filter = () => {
   const dispatch = useDispatch();
   const handleInput = event => {

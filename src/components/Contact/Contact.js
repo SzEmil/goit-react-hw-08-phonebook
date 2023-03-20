@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import css from './Contact.module.css';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 import { useDispatch } from 'react-redux';
 
 export const Contact = ({ contact }) => {
