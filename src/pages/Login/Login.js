@@ -1,9 +1,24 @@
 import styles from './Login.module.css';
-
+import { useDispatch } from 'react-redux';
+import { signIn } from 'redux/auth/operations';
 export default function Login() {
+  const dispatch = useDispatch();
+  const handleSubmit = event => {
+    event.preventDefault();
+    const form = event.target;
+
+    dispatch(
+      signIn({
+        email: form.elements.email.value,
+        password: form.elements.password.value,
+      })
+    );
+    form.reset();
+  };
+
   return (
     <>
-      <form className={styles.loginForm}>
+      <form onSubmit={handleSubmit} className={styles.loginForm}>
         <label htmlFor="email">Email:</label>
         <input
           type="email"
@@ -28,4 +43,4 @@ export default function Login() {
       </form>
     </>
   );
-};
+}

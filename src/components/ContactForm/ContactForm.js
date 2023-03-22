@@ -43,7 +43,7 @@ export const ContactForm = () => {
     }
     const user = {
       name,
-      phone: handleFormatPhoneNumber(phone),
+      number: handleFormatPhoneNumber(phone),
     };
     dispatch(addContact(user));
     form.reset();
