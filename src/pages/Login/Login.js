@@ -17,7 +17,7 @@ export default function Login() {
   };
 
   return (
-    <>
+    <div className={styles.login}>
       <form onSubmit={handleSubmit} className={styles.loginForm}>
         <label htmlFor="email">Email:</label>
         <input
@@ -41,6 +41,6 @@ export default function Login() {
           Login
         </button>
       </form>
-    </>
+    </div>
   );
 }

@@ -1,0 +1,54 @@
+.container {
+  min-width: 350px;
+  max-width: 1200px;
+  margin: auto;
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navLinkActive {
+  display: flex;
+  align-items: center;
+  color: #5eba7d;
+  transition: color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.navLinkOff {
+  color: black;
+  display: flex;
+  align-items: center;
+
+  transition: color 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.icon {
+  transition: fill 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.navLinkOff:hover .icon {
+  fill: #5eba7d;
+}
+.navLinkOff:hover {
+  color: #5eba7d;
+}
+.link {
+  color: white;
+  font-style: normal;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+.linkText {
+  padding-left: 10px;
+  font-style: normal;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+@media screen and (min-width: 769px) {
+}
+
+@media screen and (min-width: 1200px) {
+}

@@ -6,6 +6,10 @@
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+
+  max-width: 800px;
+
+  margin-top: 50px;
 }
 
 .inputField {
@@ -32,8 +36,13 @@
   letter-spacing: 1px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
 .submitButton:hover {
   background-color: #4ba16f;
+}
+
+.isActive {
+  color: #4ba16f;
 }

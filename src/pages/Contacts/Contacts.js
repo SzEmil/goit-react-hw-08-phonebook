@@ -20,22 +20,28 @@ export default function Contacts() {
 
   return (
     <>
-      <h1>Phonebook</h1>
-      <ContactForm />
-      <h2>Contacts</h2>
-      <Filter />
-      {isLoading && !error && (
-        <ColorRing
-          visible={true}
-          height="80"
-          width="80"
-          ariaLabel="blocks-loading"
-          wrapperStyle={{}}
-          wrapperClass="blocks-wrapper"
-          colors={['#b8c480', '#B2A3B5', '#F4442E', '#51E5FF', '#429EA6']}
-        />
-      )}
-      <ContactList />
+      <div>
+        <div>
+          <h1>Phonebook</h1>
+          <ContactForm />
+          <h2>Contacts</h2>
+          <Filter />
+        </div>
+        <div>
+          {isLoading && !error && (
+            <ColorRing
+              visible={true}
+              height="80"
+              width="80"
+              ariaLabel="blocks-loading"
+              wrapperStyle={{}}
+              wrapperClass="blocks-wrapper"
+              colors={['#b8c480', '#B2A3B5', '#F4442E', '#51E5FF', '#429EA6']}
+            />
+          )}
+          <ContactList />
+        </div>
+      </div>
     </>
   );
 }

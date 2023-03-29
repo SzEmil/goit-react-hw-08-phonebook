@@ -6,5 +6,6 @@ export const ProtectedRoute = ({ component, redirectTo = '/' }) => {
 
   const shouldRedirect = isLoggedIn === true && isRefreshing === false;
 
+
   return shouldRedirect ? component : <Navigate to={redirectTo} />;
 };
